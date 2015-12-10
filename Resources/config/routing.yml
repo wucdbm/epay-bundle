@@ -1,0 +1,3 @@
+wucdbm_epay_receive:
+    path:        /
+    defaults:    { _controller: WucdbmEpayBundle:Receive:receive }

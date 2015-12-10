@@ -1,0 +1,22 @@
+{
+    "name": "wucdbm/menu-builder-bundle",
+    "type": "symfony-bundle",
+    "description": "A simple, standalone Menu Builder for Symfony 2 Applications",
+    "keywords": ["wucdbm", "menu", "builder", "menu builder", "symfony2"],
+    "authors": [
+        {
+            "name": "Martin Kirilov",
+            "email": "wucdbm@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~5.5",
+        "wucdbm/epay": "*",
+        "wucdbm/wucdbm-bundle": "~2.8"
+    },
+    "autoload": {
+        "psr-4": { "Wucdbm\\Bundle\\MenuBuilderBundle\\": "" }
+    },
+    "license": "GPL-2.0"
+}
