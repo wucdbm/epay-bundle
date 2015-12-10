@@ -1,5 +1,5 @@
 {
-    "name": "wucdbm/menu-builder-bundle",
+    "name": "wucdbm/epay-bundle",
     "type": "symfony-bundle",
     "description": "A simple, standalone Menu Builder for Symfony 2 Applications",
     "keywords": ["wucdbm", "menu", "builder", "menu builder", "symfony2"],
