@@ -16,7 +16,7 @@
         "wucdbm/wucdbm-bundle": "~2.8"
     },
     "autoload": {
-        "psr-4": { "Wucdbm\\Bundle\\MenuBuilderBundle\\": "" }
+        "psr-4": { "Wucdbm\\Bundle\\EpayBundle\\": "" }
     },
     "license": "GPL-2.0"
 }
