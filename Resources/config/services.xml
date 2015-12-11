@@ -1,0 +1,14 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!-- move this to the new bundle -->
+        <service id="wucdbm_epay.client" class="Wucdbm\Component\Epay\Client\EpayClient">
+            <argument type="service" id="%wucdbm_epay.client_options%"/>
+            <argument type="service" id="%wucdbm_epay.client_handler%"/>
+        </service>
+
+    </services>
+</container>
