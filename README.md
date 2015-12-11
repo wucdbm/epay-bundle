@@ -19,4 +19,4 @@ wucdbm_epay:
 ```
 - The receive address will now be /payments/epay/%wucdbm_epay.receive_url% - /payments/epay/receive by default. This gives you the full flexibility to alter the URL at which you receive the payments.
 - Use the `app/console wucdbm_epay:get_receive_path` command to make sure you have the correct receive path
-- Go to epay.bg and contact their support asking them to 
+- Go to epay.bg and contact their support asking them to set your correct receive URL
