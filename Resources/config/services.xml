@@ -2,12 +2,16 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
+    <parameters>
+        <parameter key="wucdbm_epay.client_class">Wucdbm\Component\Epay\Client\EpayClient</parameter>
+        <parameter key="wucdbm_epay.receive_url">receive</parameter>
+    </parameters>
+
     <services>
 
-        <!-- move this to the new bundle -->
-        <service id="wucdbm_epay.client" class="Wucdbm\Component\Epay\Client\EpayClient">
-            <argument type="service" id="%wucdbm_epay.client_options%"/>
-            <argument type="service" id="%wucdbm_epay.client_handler%"/>
+        <service id="wucdbm_epay.client" class="%wucdbm_epay.client_class%">
+            <argument type="expression">service(parameter('wucdbm_epay.client_options'))</argument>
+            <argument type="expression">service(parameter('wucdbm_epay.client_handler'))</argument>
         </service>
 
     </services>

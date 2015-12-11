@@ -20,51 +20,12 @@ class WucdbmEpayExtension extends Extension {
 
         $bag = $container->getParameterBag();
 
-        $bag->set('wucdbm_locale.config', $config);
+        $bag->set('wucdbm_epay.config', $config);
 
-        $locales = $config['locales'];
-        $localesSimple = array_keys($locales);
+        $bag->set('wucdbm_epay.client_options', $config['client_options']);
+        $bag->set('wucdbm_epay.client_handler', $config['client_handler']);
 
-        $bag->set('wucdbm_locale.locales', $locales);
-        $bag->set('wucdbm_locale.locales_simple', $localesSimple);
-
-        $loader->load('services/managers.xml');
-        $loader->load('services/forms.xml');
-
-        if (isset($config['cookie_listener']) && $config['cookie_listener']['enabled']) {
-            $bag->set('wucdbm_locale.cookie_listener', $config['cookie_listener']);
-            $loader->load('services/listener/cookie.xml');
-        }
-
-        if (isset($config['disabled_locale_redirect_listener']) && $config['cookie_listener']['enabled']) {
-            $bag->set('wucdbm_locale.disabled_locale_redirect_listener', $config['disabled_locale_redirect_listener']);
-            $loader->load('services/listener/disabled_locale_redirect.xml');
-        }
-
-        if (isset($config['jms_integration']) && $config['jms_integration']) {
-            $bag->set('jms_translation.locales', $localesSimple);
-        }
-
-        $bag->set('wucdbm_locale.locales_enabled.routing', implode('|', $localesSimple));
-
-
-
-
-
-        $config = array();
-        foreach ($configs as $subConfig) {
-            $config = array_merge($config, $subConfig);
-        }
-        $loader = new XmlFileLoader(
-            $container,
-            new FileLocator(__DIR__.'/../Resources/config')
-        );
         $loader->load('services.xml');
-
-
-
-
-
     }
 
     public function getXsdValidationBasePath() {

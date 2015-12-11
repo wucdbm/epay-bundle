@@ -2,31 +2,18 @@
 
 namespace Wucdbm\Bundle\EpayBundle\Controller;
 
-use Wucdbm\Component\Epay\Exception\ChecksumMismatchException;
-use Wucdbm\Component\Epay\Exception\NoDataException;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Wucdbm\Bundle\WucdbmBundle\Controller\BaseController;
 
-class EpayController extends BaseController {
+class ReceiveController extends Controller {
 
     public function receiveAction(Request $request) {
-        $api = $this->container->get('app.payments.epay');
+        $client = $this->container->get('wucdbm_epay.client');
         $post = $request->request->all();
-        try {
-            $payments = $api->receive($post);
-            $response = $api->adaptReceiveResponse($payments);
+        $response = $client->receiveResponse($post);
 
-            return new Response($response);
-        } catch (NoDataException $ex) {
-            // TODO: Handle through the API's subscriber
-
-            return new Response('ERR=No Data');
-        } catch (ChecksumMismatchException $ex) {
-            // TODO: Handle through the API's subscriber
-
-            return new Response('ERR=Not valid CHECKSUM');
-        }
+        return new Response($response->toString());
     }
 
 }
