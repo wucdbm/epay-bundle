@@ -10,7 +10,7 @@ wucdbm_epay:
     client_handler: "YourHandlerServiceId"
 ```
 - Add new Wucdbm\Bundle\EpayBundle\WucdbmEpayBundle(), to your AppKernel >> A F T E R << the bundle that registers the mandatory services
-- Optionally, override the wucdbm_epay.receive_url parameter (defaults to receive)
+- Optionally, override the wucdbm_epay.receive_url parameter (defaults to `receive`)
 - Mouting the @WucdbmEpayBundle/Resources/config/routing.yml file in your routing.yml
 ```
 wucdbm_epay:
