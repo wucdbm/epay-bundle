@@ -7,11 +7,11 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class GetReceiveUrlCommand extends ContainerAwareCommand {
+class GetReceivePathCommand extends ContainerAwareCommand {
 
     protected function configure() {
         $this
-            ->setName('wucdbm_epay:dump_receive_address')
+            ->setName('wucdbm_epay:get_receive_path')
             ->setDescription('Get the current receive address');
     }
 
