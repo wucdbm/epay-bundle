@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": "~5.5",
-        "wucdbm/epay": "~0.1",
+        "wucdbm/epay": "~1.0",
         "symfony/framework-bundle": "~2.8|~3.0"
     },
     "autoload": {
